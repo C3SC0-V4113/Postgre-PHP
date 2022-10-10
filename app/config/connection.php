@@ -1,11 +1,14 @@
 <?php
+
+use FTP\Connection as FTPConnection;
+
 class Connection
 {
     public $host = 'localhost';
-    public $dbname = 'dbname';
+    public $dbname = 'db_barca';
     public $port = '5432';
-    public $username = 'root';
-    public $password = 'root';
+    public $username = 'postgres';
+    public $password = '123456';
     public $driver = 'pgsql';
     public $connect;
 
@@ -13,11 +16,14 @@ class Connection
     {
         try {
             $connection = new Connection();
-            $connection->connect = new PDO("{$connection->driver}:host={$connection->host}; port={$connection->port};dbname={$connection->dbname}", $connection->user, $connection->password);
+            $connection->connect = new PDO("{$connection->driver}:host={$connection->host}; port={$connection->port};dbname={$connection->dbname}", $connection->username, $connection->password);
             $connection->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $connection->connect;
+            //return $connection->connect;
+            echo "connection success";
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
     }
 }
+
+Connection::getConnection();
