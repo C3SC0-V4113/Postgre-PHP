@@ -17,7 +17,7 @@
       <div class="col-sm-6">
         <h5>Formulario</h5>
         <hr />
-        <form action="javascript:void(0);" onsubmit="app.guardar()">
+        <form action="javascript:void(0);" onsubmit="app.save()">
           <input type="hidden" id="id" />
           <label for="nombre">Nombre</label>
           <input type="text" class="form-control" id="nombre" placeholder="Nombre del Jugador" autofocus required />
