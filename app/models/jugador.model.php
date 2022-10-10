@@ -1,11 +1,11 @@
 <?php
-require_once "./app/config/connection.php";
+require_once "../config/connection.php";
 class Jugador extends Connection
 {
     public static function getData()
     {
         try {
-            $sql = "SELECT * FROM jugador";
+            $sql = 'SELECT * FROM jugador';
             $stmt = Connection::getConnection()->prepare($sql);
             $stmt->execute();
             $result = $stmt->fetchAll();
@@ -31,7 +31,7 @@ class Jugador extends Connection
     public static function postData($data)
     {
         try {
-            $sql = "INSERT INTO jugador (nombre,posicion,camiseta) VALUES (:nombre, :apellido, :edad)";
+            $sql = "INSERT INTO jugador (nombre,posicion,camiseta) VALUES (:nombre, :posicion, :camiseta)";
             $stmt = Connection::getConnection()->prepare($sql);
             $stmt->bindParam(':nombre', $data['nombre']);
             $stmt->bindParam(':posicion', $data['posicion']);

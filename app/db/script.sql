@@ -18,3 +18,6 @@ CREATE TABLE jugador(
     camiseta integer NOT NULL,
     PRIMARY KEY (id)
 )
+
+INSERT INTO jugador (nombre,posicion,camiseta) VALUES ('Messi', 'Delantero', 10);
+INSERT INTO jugador (nombre,posicion,camiseta) VALUES ('Neymar', 'Delantero', 9)
