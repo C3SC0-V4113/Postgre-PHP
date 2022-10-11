@@ -19,12 +19,18 @@
         <hr />
         <form action="javascript:void(0);" onsubmit="app.save()">
           <input type="hidden" id="id" />
+          <!--Nombre-->
           <label for="nombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Nombre del Jugador" autofocus required />
-          <label for="posicion">Posición</label>
-          <input type="text" class="form-control" id="posicion" placeholder="ej. Delantero" required />
-          <label for="camiseta">No. Camiseta</label>
-          <input type="number" class="form-control" id="camiseta" placeholder="ej. 10" required />
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre del Alumno" autofocus required />
+          <!--Apellido-->
+          <label for="apellido">Apellido</label>
+          <input type="text" class="form-control" id="apellido" placeholder="Apellido del Alumno" required />
+          <!--Carnet-->
+          <label for="carnet">Carnet</label>
+          <input type="text" class="form-control" id="carnet" placeholder="XX000000" required />
+          <!--Edad-->
+          <label for="edad">Edad</label>
+          <input type="number" class="form-control" id="edad" placeholder="ej. 21" required />
           <br />
           <div>
             <button type="submit" class="btn btn-primary">Guardar</button>
@@ -39,8 +45,9 @@
             <tr>
               <th>#</th>
               <th>Nombre</th>
-              <th>Posición</th>
-              <th>No. Camiseta</th>
+              <th>Apellido</th>
+              <th>Carnet</th>
+              <th>Edad</th>
               <th>Opciones</th>
             </tr>
           </thead>

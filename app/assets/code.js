@@ -2,8 +2,9 @@ const app = new (function () {
   this.tbody = document.getElementById("tbody");
   this.id = document.getElementById("id");
   this.nombre = document.getElementById("nombre");
-  this.posicion = document.getElementById("posicion");
-  this.camiseta = document.getElementById("camiseta"); // TODO
+  this.apellido = document.getElementById("apellido");
+  this.carnet = document.getElementById("carnet");
+  this.edad = document.getElementById("edad"); // TODO
   this.listing = () => {
     fetch("../controllers/listing.php")
       .then((response) => response.json())
@@ -14,8 +15,9 @@ const app = new (function () {
             <tr>
                 <td>${item.id}</td>
                 <td>${item.nombre}</td>
-                <td>${item.posicion}</td>
-                <td>${item.camiseta}</td>
+                <td>${item.apellido}</td>
+                <td>${item.carnet}</td>
+                <td>${item.edad}</td>
                 <td>
                 <a href="javascript:void(0);" class="btn btn-warning btn-sm" onclick="app.edit(${item.id})">Editar</a>
                 <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="app.delete(${item.id})">Eliminar</a>
@@ -31,8 +33,9 @@ const app = new (function () {
   this.save = () => {
     var form = new FormData();
     form.append("nombre", this.nombre.value);
-    form.append("posicion", this.posicion.value);
-    form.append("camiseta", this.camiseta.value);
+    form.append("apellido", this.apellido.value);
+    form.append("carnet", this.carnet.value);
+    form.append("edad", this.edad.value);
     form.append("id", this.id.value);
     if (this.id.value === "") {
       fetch("../controllers/save.php", {
@@ -64,8 +67,9 @@ const app = new (function () {
   this.clean = () => {
     this.id.value = "";
     this.nombre.value = "";
-    this.posicion.value = "";
-    this.camiseta.value = "";
+    this.apellido.value = "";
+    this.carnet.value = "";
+    this.edad.value = "";
   };
 
   this.delete = (id) => {
@@ -97,8 +101,9 @@ const app = new (function () {
       .then((data) => {
         this.id.value = data.id;
         this.nombre.value = data.nombre;
-        this.posicion.value = data.posicion;
-        this.camiseta.value = data.camiseta;
+        this.apellido.value = data.apellido;
+        this.carnet.value = data.carnet;
+        this.edad.value = data.edad;
       })
       .catch((error) => {
         console.error(error);

@@ -1,4 +1,4 @@
 <?php
-require_once('../models/jugador.model.php');
-$arrayPost = array('nombre' => $_POST['nombre'], 'posicion' => $_POST['posicion'], 'camiseta' => $_POST['camiseta']);
-echo json_encode(Jugador::postData($arrayPost));
+require_once('../models/alumno.model.php');
+$arrayPost = array('nombre' => $_POST['nombre'], 'apellido' => $_POST['apellido'], 'carnet' => $_POST['carnet'], 'edad' => $_POST['edad']);
+echo json_encode(Alumno::postData($arrayPost));

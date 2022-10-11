@@ -3,7 +3,7 @@
 class Connection
 {
     public $host = 'localhost';
-    public $dbname = 'db_barca';
+    public $dbname = 'asi';
     public $port = '5432';
     public $username = 'postgres';
     public $password = '123456';

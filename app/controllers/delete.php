@@ -1,3 +1,3 @@
 <?php
-require_once('../models/jugador.model.php');
-echo json_encode(Jugador::deleteData($_POST['id']));
+require_once('../models/alumno.model.php');
+echo json_encode(Alumno::deleteData($_POST['id']));

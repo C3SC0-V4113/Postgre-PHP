@@ -1,4 +1,4 @@
 <?php
-require_once('../models/jugador.model.php');
+require_once('../models/alumno.model.php');
 
-echo json_encode(Jugador::getByID($_POST['id']));
+echo json_encode(Alumno::getByID($_POST['id']));

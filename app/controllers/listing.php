@@ -1,4 +1,4 @@
 <?php
 //require_once(realpath(dirname(__FILE__) . '/..') . '/models/jugador.model.php');
-require_once('../models/jugador.model.php');
-echo json_encode(Jugador::getData());
+require_once('../models/alumno.model.php');
+echo json_encode(Alumno::getData());
